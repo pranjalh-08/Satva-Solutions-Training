@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic JavaScript Example</title>
+    
+   
+</head>
+<body>
+    <h1>JavaScript Toggle Example</h1>
+    <p id="text">This is some text that can be shown or hidden!</p>
+    <button id="toggleButton">Hide Text</button>
+
+    <script>
+        
+        const textElement = document.getElementById('text');
+        const toggleButton = document.getElementById('toggleButton');
+
+        // Add click event to toggle visibility
+        toggleButton.addEventListener('click', function () {
+            if (textElement.style.display === 'none') {
+                textElement.style.display = 'block'; // Show the text
+                toggleButton.textContent = 'Hide Text'; // Update 
+            } else {
+                textElement.style.display = 'none'; // Hide the text
+                toggleButton.textContent = 'Show Text'; // Update           
+                }
+        });
+    </script>
+</body>
+</html>
