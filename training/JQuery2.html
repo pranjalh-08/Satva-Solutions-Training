@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery To-Do List</title>
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+</head>
+<body>
+    <div class="container">
+        <h1>jQuery To-Do List</h1>
+        <input type="text" id="newItem" placeholder="Add a new item">
+        <button id="addItem">Add Item</button>
+        <ul id="todoList"></ul>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            // Add a new item to the list
+            $('#addItem').click(function () {
+                const newItem = $('#newItem').val().trim();
+                if (newItem) {
+                    $('#todoList').append(`
+                        <li>
+                            ${newItem}
+                            <span class="remove">x</span>
+                        </li>
+                    `);
+                    $('#newItem').val(''); // Clear input field
+                }
+            });
+
+            // Remove an item from the list
+            $('#todoList').on('click', '.remove', function () {
+                $(this).parent().remove();
+            });
+        });
+    </script>
+</body>
+</html>
